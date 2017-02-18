@@ -1,3 +1,7 @@
+/*
+score: 9 + 0(extra credit)
+comments: if you want to do the code review or want to know the answer for extra credits, come to find me on campus
+*/
 package Assignment3;
 
 import java.util.ArrayList;
@@ -20,7 +24,7 @@ public class Assignment3 {
      *  Given an array, reverse the elements within this array and print the result
      *  eg, given{1,2,3,4}, print{4,3,2,1}
      */
-    public void reverseArray(int[] nums) {
+    public void reverseArray(int[] nums) {         //correct
     	int left=0;
     	int right=nums.length-1;
     	while (left<right){
@@ -41,7 +45,7 @@ public class Assignment3 {
      *  The digits are stored such that the most significant digit is at the head of the array.
      *  eg, given {1,2,9}, reutrn{1,3,0}.
      */
-    public int[] plusOne(int[] digits) {
+    public int[] plusOne(int[] digits) {                //correct
     	if(digits==null||digits.length==0)
     		return new int[0];
     	int temp=1;
@@ -68,7 +72,7 @@ public class Assignment3 {
      *  Write a program that takes an integer as input and returns all the primes between 1 and that integer(inclusive).
      *  eg, input is 18, you should return{2,3,5,7,11,13,17}
      */
-   public int[] generatePrimes(int n) {
+   public int[] generatePrimes(int n) {              //miss one corner case: if n is 2, your output is an empty array. But you should reutrn {2};
     	List<Integer> x = new ArrayList<>();  
     	
     	for (int j=0; j<n; j++){
@@ -106,7 +110,7 @@ public class Assignment3 {
      *  to isSubstring
      *  eg, "pineapple" is a rotation of "neapplepi"
      */
-    public boolean isRotation(String s1, String s2) {
+    public boolean isRotation(String s1, String s2) {        //correct
     	if (s1.length()!=s2.length()){
     		return false;
     	}
@@ -131,7 +135,7 @@ public class Assignment3 {
      *  Given two strings, write a method to decide if one is a permutation of the other
      *  hint: the comparison is case sensitive and whitespace is significant
      */
-    public boolean isPermutation(String s1, String s2) {
+    public boolean isPermutation(String s1, String s2) {            //correct, but remember, try not to use Arrays.sort() because its time complexity is hgih
         if (s1.length()!=s2.length())
         	return false;
         char[]a=s1.toCharArray();
@@ -150,7 +154,7 @@ public class Assignment3 {
      *  the string to be encoded consists of letters of the alphabet, with no digits, and the string to be
      *  decoded is a valid encoding.
      */
-    public static String encoding(String s) {
+    public static String encoding(String s) {                //correct
     	int count=1;
     	StringBuilder x=new StringBuilder();
     	for (int i=1;i<=s.length();++i){
@@ -192,7 +196,7 @@ public class Assignment3 {
      *                    7,8,9           9 6 3
      *tip: image could be a square or a rectangle.
      */
-    public void rotate(int[][] matrix) {
+    public void rotate(int[][] matrix) {                  //wrong, one thing, you could not print 2D matrix like this; another thing, for the given example, your output is wrong
         int x=matrix.length;
         for (int i=0; i<x/2; i++){
         	for (int j=0; j<Math.ceil(((double)x)/2.);j++){
